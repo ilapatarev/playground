@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main class="log-form">
+    <article class="log">
+        <form method="post" action="{% url 'login' %}?next=/fields/">
+            {% csrf_token %}
+            <div>
+                <h2>Login</h2>
+                <label for="id_username">Username:</label>
+                <input type="text" id="id_username" name="username" required>
+            </div>
+            <div>
+                <label for="id_password">Password:</label>
+                <input type="password" id="id_password" name="password" required>
+            </div>
+            <button class="log-button" type="submit">Login</button>
+        </form>
+    </article>
+</main>
+
+    
+{% endblock %}
